@@ -40,7 +40,7 @@ public class StorePurchaseHelper : NSObject {
     public func purchase(item: SKProduct) {
         // ユーザーが支払い可能かを確認してください
         guard SKPaymentQueue.canMakePayments() else {
-            self.delegate?.purchaseFailed(forProductID: item.productIdentifier, reason: "ユーザーが支払いをすることができません。ここに変更を入れました。")
+            self.delegate?.purchaseFailed(forProductID: item.productIdentifier, reason: "ユーザーが支払いをすることができません。")
             return
         }
         let payment = SKPayment(product: item)
